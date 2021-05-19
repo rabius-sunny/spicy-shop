@@ -4,9 +4,24 @@ import mobile from '../../images/mobile.png'
 import fb from '../../images/fb.png'
 import google from '../../images/google.png'
 import email from '../../images/mail.png'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
+import { useContext } from 'react'
+import { NumberContext } from '../../App'
 
-const Login = () => {
+const LoginOptions = () => {
+
+    const [isNumber, setIsNumber] = useContext(NumberContext)
+    const history = useHistory()
+    const handleMobileClick = () => {
+        setIsNumber(true);
+        history.push("/login-page");
+    }
+    const handleEmailClick = () => {
+        setIsNumber(false);
+        history.push("/login-page");
+
+    }
+
     return (
         <div className={classes.login__main}>
             <div className={classes.login__header}>
@@ -15,13 +30,13 @@ const Login = () => {
             <div className={classes.login__container}>
                 <h2>LOGIN</h2>
                 <div>
-                    <Link to="/login-with-phone">
+                    <div>
                         <div className={classes.login__option}>
                             <img src={mobile} alt="" />
-                            <p>Continue with Mobile Number </p>
+                            <button onClick={handleMobileClick}>Continue with Mobile Number </button>
                             <div></div>
                         </div>
-                    </Link>
+                    </div>
                     <div className={classes.login__option}>
                         <img src={fb} alt="" />
                         <p>Continue with Facebook </p>
@@ -34,7 +49,7 @@ const Login = () => {
                     </div>
                     <div className={classes.login__option}>
                         <img src={email} alt="" />
-                        <p>Continue with Email </p>
+                        <button onClick={handleEmailClick}>Continue with Email </button>
                         <div></div>
                     </div>
                 </div>
@@ -43,4 +58,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default LoginOptions

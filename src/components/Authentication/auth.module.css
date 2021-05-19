@@ -36,11 +36,12 @@
     padding: 7px;
     border-radius: 7px;
     background: #fff;
-    cursor: pointer;
 }
-.login__option p {
+.login__option p, button {
     padding-left: 20px;
     margin-bottom: 0;
+    border: 0;
+    background: none;
 }
 .login__container  a {
     text-decoration: none !important;
