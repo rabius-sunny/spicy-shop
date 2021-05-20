@@ -13,7 +13,6 @@ const App = () => {
 
   const [isNumber, setIsNumber] = useState(null)
   const [products, setProducts] = useState([])
-  console.log(products)
 
   return (
     <NumberContext.Provider value={[isNumber, setIsNumber]}>

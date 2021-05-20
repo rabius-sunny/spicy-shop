@@ -1,13 +1,14 @@
 import classes from './auth.module.css'
 import logo from '../../images/rideLogo.png'
 import { useContext, useState } from 'react'
-import { NumberContext } from '../../App'
-import { Link } from 'react-router-dom'
+import { NumberContext, ProductsContext } from '../../App'
+import { Link, useHistory } from 'react-router-dom'
 
 const SignupPage = () => {
 
+    const history = useHistory()
     const [isNumber, setIsNumber] = useContext(NumberContext)
-
+    const [products, setProducts] = useContext(ProductsContext)
     const [credent, setCredents] = useState({
         name: '',
         number: '',
@@ -18,6 +19,15 @@ const SignupPage = () => {
         let credentials = { ...credent };
         credentials[e.target.name] = e.target.value;
         setCredents(credentials)
+    }
+    const getData = (number, password) => {
+        fetch('http://localhost:4040/vendor/login/' + number + '/' + password)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data);
+                alert('signed up as shopkeeper successfully')
+                history.push("/");
+            })
     }
     const handleShopKeeper = () => {
         let { name, email, number, password } = credent
@@ -34,7 +44,7 @@ const SignupPage = () => {
             },
             body: JSON.stringify(data)
         })
-            .then(res => console.log('signed up'))
+            .then(res => getData(number, password))
             .catch(err => console.log(err))
     }
     const handleUser = () => {
@@ -52,7 +62,10 @@ const SignupPage = () => {
             },
             body: JSON.stringify(userData)
         })
-            .then(res => console.log('signed up'))
+            .then(res => {
+                alert('signed up user successfully')
+                history.push('/')
+            })
             .catch(err => console.log(err))
     }
 
@@ -86,7 +99,7 @@ const SignupPage = () => {
 
 
                     <div className="d-grid">
-                        {isNumber ? <button onClick={handleShopKeeper} className="btn btn-primary" type="button">Login shopkeeper</button> : <button onClick={handleUser} className="btn btn-primary" type="button">Login user</button>}
+                        {isNumber ? <button onClick={handleShopKeeper} className="btn btn-primary" type="button">Signup shopkeeper</button> : <button onClick={handleUser} className="btn btn-primary" type="button">Signup user</button>}
                     </div>
                     <div className="my-3">
                         <p>Already have an account? <Link to="/login">login here</Link></p>
