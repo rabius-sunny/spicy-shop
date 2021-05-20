@@ -13,7 +13,7 @@ This project is created with <code>ReactJs</code>, <code>Bootstrap5</code>,  <co
 <p>After entering the login section by Clicking from Navbar or the proposal nav, we'll find login options as below. </p>
 <img src="https://i.ibb.co/nm6f1Tf/option.png" />
 <p>Here we'll be asked by which method we want to enter. Notice, only a shopkeeper can login or sign up here by a mobile number. General customers will login or sign up with an email address.</p>
-<p>If a customer wants to login or sign up, he'll go through 'Continue with Email'. Then he'll see this form as following :</p>
+<p>If a shopkeeper wants to login or create and shopkeeper account, he will go through the 'Continue with Mobile Number'. But when a customer wants to login or sign up, he'll go through 'Continue with Email'. Then he'll see this form as following :</p>
 <img src="https://i.ibb.co/XCBZJZx/login-user.png" />
 <p>Here a customer can login to this site with his email and password if he already has an account. If not, he can create one by clicking 'create here'. If he want to create an account, he will be asked as below : </p>
 <img src="https://i.ibb.co/C5g5Rx8/signup-user.png"/>
