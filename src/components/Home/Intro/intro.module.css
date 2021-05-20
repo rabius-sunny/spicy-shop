@@ -1,5 +1,5 @@
 .intro__left>h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     color: yellow;
 }
 
@@ -56,4 +56,25 @@
 span {
     text-decoration: none !important;
     color: #ed8d36;
+}
+
+@media (max-width: 991px) {
+    .intro__left>h1 {
+        font-size: 4rem;
+    }
+    .intro__right {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .intro__right {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .intro__left>p {
+        font-size: 1.5rem;
+    }
 }
