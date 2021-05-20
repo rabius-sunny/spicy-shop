@@ -50,3 +50,13 @@ section {
     background: #e77000 !important;
     color: #fff !important;
 }
+
+.card {
+    transition: all .2s ease-in-out;
+    border: 1px solid #e770007a;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
