@@ -1,11 +1,12 @@
 import classes from './auth.module.css'
 import logo from '../../images/rideLogo.png'
 import { useContext, useState } from 'react'
-import { NumberContext } from '../../App'
-import { Link } from 'react-router-dom'
+import { NumberContext, ProductsContext } from '../../App'
+import { Link, useHistory } from 'react-router-dom'
 
 const LoginWithPhone = () => {
 
+    const history = useHistory()
     const [isNumber, setIsNumber] = useContext(NumberContext)
     const [ShopkeeperCredents, setShopkeeperCredents] = useState({
         number: '',
@@ -15,6 +16,7 @@ const LoginWithPhone = () => {
         email: '',
         password: ''
     })
+    const [products, setProducts] = useContext(ProductsContext)
     const handleUserChange = e => {
         let credentials = { ...userCredents };
         credentials[e.target.name] = e.target.value;
@@ -27,10 +29,32 @@ const LoginWithPhone = () => {
     }
 
     const shopKeeperSubmit = () => {
-        console.log(ShopkeeperCredents)
+        let { number, password } = ShopkeeperCredents;
+        fetch('http://localhost:4040/vendor/login/' + number + '/' + password)
+            .then(res => {
+                if (res.status === 404) {
+                    alert('Invalid Username or Password! Please try with actual credentials')
+                }
+                return res.json()
+            })
+            .then(data => {
+                setProducts(data);
+                history.push("/");
+            })
+            .catch(err => console.log(err))
     }
     const userSubmit = () => {
-        console.log(userCredents)
+        let { email, password } = userCredents;
+        fetch('http://localhost:4040/user/login/' + email + '/' + password)
+            .then(res => {
+                if (res.status === 200) {
+                    alert('Login User Successfully')
+                    history.push("/")
+                } else {
+                    alert("Invalid Username or Password. Please try with actual credentials")
+                }
+            })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -56,7 +80,7 @@ const LoginWithPhone = () => {
                         isNumber ?
                             <div className="mb-3">
                                 <label htmlFor="password" className="form-label">Enter your password</label>
-                                <input onChange={handleShopChange} type="text" name="password" className="form-control" id="password" placeholder="********" />
+                                <input onChange={handleShopChange} type="password" name="password" className="form-control" id="password" placeholder="********" />
                             </div> :
                             <div className="mb-3">
                                 <label htmlFor="password" className="form-label">Enter your password</label>

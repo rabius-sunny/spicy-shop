@@ -7,32 +7,36 @@ import SignupPage from './components/Authentication/SignupPage'
 import { createContext, useState } from 'react';
 
 export const NumberContext = createContext()
+export const ProductsContext = createContext()
 
 const App = () => {
 
   const [isNumber, setIsNumber] = useState(null)
-  console.log(isNumber)
+  const [products, setProducts] = useState([])
+  console.log(products)
 
   return (
     <NumberContext.Provider value={[isNumber, setIsNumber]}>
-      <div className="app">
-        <RouteContainer>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/login">
-              <LoginOptions />
-            </Route>
-            <Route path="/login-page">
-              <LoginPage />
-            </Route>
-            <Route path="/signup">
-              <SignupPage />
-            </Route>
-          </Switch>
-        </RouteContainer>
-      </div>
+      <ProductsContext.Provider value={[products, setProducts]}>
+        <div className="app">
+          <RouteContainer>
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/login">
+                <LoginOptions />
+              </Route>
+              <Route path="/login-page">
+                <LoginPage />
+              </Route>
+              <Route path="/signup">
+                <SignupPage />
+              </Route>
+            </Switch>
+          </RouteContainer>
+        </div>
+      </ProductsContext.Provider>
     </NumberContext.Provider>
   );
 }
