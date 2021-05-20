@@ -20,19 +20,40 @@ const SignupPage = () => {
         setCredents(credentials)
     }
     const handleShopKeeper = () => {
-        console.log(credent)
+        let { name, email, number, password } = credent
+        let data = {
+            name: name,
+            email: email,
+            number: number,
+            password: password
+        }
         fetch('http://localhost:4040/vendor/signup', {
             method: 'POST',
             headers: {
-                'Content-type': 'applicatin/json'
+                'Content-type': 'application/json'
             },
-            body: JSON.stringify(credent)
+            body: JSON.stringify(data)
         })
             .then(res => console.log('signed up'))
             .catch(err => console.log(err))
     }
     const handleUser = () => {
-        console.log(credent)
+        let { name, email, number, password } = credent
+        let userData = {
+            name: name,
+            email: email,
+            number: number,
+            password: password
+        }
+        fetch('http://localhost:4040/user/signup', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+            .then(res => console.log('signed up'))
+            .catch(err => console.log(err))
     }
 
     return (
