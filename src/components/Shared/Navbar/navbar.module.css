@@ -1,0 +1,9 @@
+.myLink:hover {
+    color: #fff !important;
+}
+
+.myBrand {
+    outline: 1px black;
+    color: #fff !important;
+    font-size: 30px;
+}

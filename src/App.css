@@ -1,24 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
-section {
-  margin: 50px 0;
-}
-.app {
-  position: relative;
-}
-.app::before {
-  content: "";
-  background-image: url('./images//mainBg.jpg');
-  background-size: cover;
-  position: absolute;
-  /* height: 100vh; */
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.1;
-  z-index: -99;
 
+body {
+    font-family: 'Aclonica', sans-serif;
+}
+
+section {
+    margin: 50px 0;
+}
+
+.app {
+    position: relative;
+}
+
+.app::before {
+    content: "";
+    background-image: url('./images//mainBg.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+    z-index: -99;
+}
+
+.navbar {
+    transition: all .3s ease-in-out;
+}
+
+#colored {
+    background: #ed8d36;
+}
+
+#transparent {
+    background: transparent;
+}
+
+.myBtn {
+    background: #ed8d36 !important;
+    color: #fff;
+}
+
+.myBtn:hover {
+    background: #e77000 !important;
+    color: #fff !important;
 }

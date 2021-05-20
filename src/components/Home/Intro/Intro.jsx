@@ -5,20 +5,21 @@ const Intro = () => {
     return (
         <section>
             <div className="container">
-                <div className="row">
-                    <div className="col-md-5 col-sm-6">
-                        <div className={classes.intro__left}></div>
-                        <h1>HURRY !!</h1>
-                        <p className="text-secondary">HUNGER DON'T WAIT</p>
+                <div className="row align-items-center">
+                    <div className="col-md-6 col-sm-12">
+                        <div className={classes.intro__left}>
+                            <h1>HURRY !!</h1>
+                            <p>HUNGER DON'T WAIT</p>
+                        </div>
                     </div>
-                    <div className="col-md-7 col-sm-6">
+                    <div className="col-md-6 col-sm-12">
                         <div className={classes.intro__right}>
                             <p>
                                 <h2>GET STARTED</h2>
                                 <small>Avail Best Offers & Disounts Only For You</small>
                             </p>
-                            <p>Continue without Login</p>
-                            <p>Already a Spicy Member? <span><Link to="/login">LOGIN</Link></span></p>
+                            <p className="text-secondary">Continue without Login</p>
+                            <Link to="/login"><p className="text-secondary">Already a Spicy Member? <span>LOGIN</span></p></Link>
                         </div>
                     </div>
                 </div>

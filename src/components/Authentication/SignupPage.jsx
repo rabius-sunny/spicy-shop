@@ -72,7 +72,7 @@ const SignupPage = () => {
     return (
         <div className={classes.login__main}>
             <div className={classes.login__header}>
-                <div className={classes.logo}><img src={logo} alt="loginPage" /></div>
+                <div className={classes.logo}><Link to="/"><img src={logo} alt="loginPage" /></Link></div>
             </div>
             <div className={classes.login__container}>
                 <h2>SIGN UP</h2>
@@ -99,7 +99,7 @@ const SignupPage = () => {
 
 
                     <div className="d-grid">
-                        {isNumber ? <button onClick={handleShopKeeper} className="btn btn-primary" type="button">Signup shopkeeper</button> : <button onClick={handleUser} className="btn btn-primary" type="button">Signup user</button>}
+                        {isNumber ? <button onClick={handleShopKeeper} className="btn myBtn" type="button">Signup shopkeeper</button> : <button onClick={handleUser} className="btn myBtn" type="button">Signup user</button>}
                     </div>
                     <div className="my-3">
                         <p>Already have an account? <Link to="/login">login here</Link></p>

@@ -1,6 +1,7 @@
 .login__main {
-    height: 1000px;
+    position: relative;
 }
+
 .login__header {
     position: relative;
     background-image: url('../../images//bgLogin.png');
@@ -9,14 +10,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 600px;
 }
+
 .logo {
     position: absolute;
     top: 20%;
 }
 
 .login__container {
+    position: relative;
+    bottom: 150px;
     max-width: 500px;
     margin: auto;
     text-align: center;
@@ -24,8 +28,18 @@
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 56%);
     border-radius: 10px;
 }
+
+.login__container>h2 {
+    color: #ed8d36;
+}
+
 .login__container label {
     float: left;
+}
+
+.login__container a {
+    color: #ed8d36 !important;
+    border-bottom: 1px solid #ed8d36;
 }
 
 .login__option {
@@ -36,18 +50,27 @@
     padding: 7px;
     border-radius: 7px;
     background: #fff;
+    cursor: pointer;
 }
-.login__option p, button {
+
+.login__option p,
+button {
     padding-left: 20px;
     margin-bottom: 0;
     border: 0;
     background: none;
 }
-.login__container  a {
+
+.login__option p:hover,
+button:hover {
+    color: #ed8d36 !important;
+}
+
+.login__container a {
     text-decoration: none !important;
     color: initial;
-
 }
+
 .login__option img {
     height: 40px;
 }
