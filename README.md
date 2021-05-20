@@ -20,5 +20,5 @@ This project is created with <code>ReactJs</code>, <code>Bootstrap5</code>,  <co
 
 <p>Similarly a shopkeeper can also login with his phone number and password. If he want to create a shopkeeper account, he'll go through the 'Continue with Number' option when he was asked after going to the login option page and then he'll be asked his credentials in a different form rather than a customer's form as following :</p>
 <img src="https://i.ibb.co/M5nsYvW/signup-shop.png" />
-<p>After successfully signing up, or logging in with a shopkeeper account, he can find all the products is his homepage as like below :</p>
+<p>After successfully signing up, or logging in with a shopkeeper account, he can find all the products in his homepage as like below :</p>
 <img src="https://i.ibb.co/g7RxGCL/products.png" />
